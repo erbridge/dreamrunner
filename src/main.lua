@@ -2,7 +2,10 @@ local Player = require 'player'
 
 local function setup_scene()
   local window = am.window{
-    title = "DREAMRUNNER",
+    title = 'DREAMRUNNER',
+    mode = 'fullscreen',
+    width = 1920,
+    height = 1080,
   }
 
   window.scene = am.group{}
