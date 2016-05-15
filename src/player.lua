@@ -1,6 +1,6 @@
-local util = require 'util'
+local utils = require 'utils'
 
-local Player = util.Node:new{}
+local Player = utils.Node:new{}
 
 function Player:update(node)
   local node_pos = node.position2d
