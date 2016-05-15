@@ -12,7 +12,9 @@ end
 
 local function start_game()
   local window = setup_scene()
-  local player = Player:create{}
+  local player = Player:create{
+    window = window,
+  }
 
   window.scene:append(player:get_node())
 end

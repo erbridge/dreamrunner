@@ -20,6 +20,12 @@ function util.Node:create(o)
     o.node = self:_create_node()
   end
 
+  o.node:action(function(node)
+    if o.update then
+      o:update(node)
+    end
+  end)
+
   return o
 end
 
