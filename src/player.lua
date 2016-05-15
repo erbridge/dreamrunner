@@ -3,7 +3,16 @@ local util = require 'util'
 local Player = util.Node:new{}
 
 function Player:update(node)
-  node.position2d = self.window:mouse_position()
+  local node_pos = node.position2d
+  local mouse_pos = self.window:mouse_position()
+  local delta = mouse_pos - node_pos
+  local max_delta = self.window.width / 2
+  local norm_delta = math.min(math.length(delta), max_delta) / max_delta
+
+  -- TODO: Try a spring equation from the centre instead.
+  delta = delta * (1 - math.exp(am.delta_time * norm_delta / -2))
+
+  node.position2d = node_pos + delta
 end
 
 function Player:_create_node()
