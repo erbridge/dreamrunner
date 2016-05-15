@@ -1,0 +1,5 @@
+title = "DREAMRUNNER"
+shortname = "dreamrunner"
+author = "Felix Laurie von Massenbach"
+appid = "uk.co.erbridge.dreamrunner"
+version = "0.1.0"
