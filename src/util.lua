@@ -1,8 +1,6 @@
-local util = ...
+Class = {}
 
-util.Class = {}
-
-function util.Class:new(o)
+function Class:new(o)
   o = o or {}
 
   setmetatable(o, self)
@@ -11,12 +9,12 @@ function util.Class:new(o)
   return o
 end
 
-util.Node = util.Class:new{}
+Node = Class:new{}
 
-function util.Node:create(o)
+function Node:create(o)
   o = self:new(o)
 
-  if o.node == nil then
+  if not o.node then
     o.node = self:_create_node()
   end
 
@@ -29,10 +27,15 @@ function util.Node:create(o)
   return o
 end
 
-function util.Node:get_node()
+function Node:get_node()
   return self.node
 end
 
-function util.Node:_create_node()
+function Node:_create_node()
   return am.group{}
 end
+
+table.merge(..., {
+  Class = Class,
+  Node = Node,
+})
