@@ -1,3 +1,4 @@
+local effects = require 'effects'
 local Player = require 'player'
 
 local function setup_scene()
@@ -8,7 +9,12 @@ local function setup_scene()
     height = 1080,
   }
 
-  window.scene = am.group{}
+  local blur = effects.Blur:create{
+    window = window,
+    blur = 0.5,
+  }
+
+  window.scene = blur:get_node()
 
   return window
 end

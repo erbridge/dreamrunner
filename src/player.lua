@@ -15,7 +15,7 @@ function Player:update(node)
 end
 
 function Player:_create_node()
-  local translate = am.translate(0, 0) ^ am.rect(-50, -50, 50, 50)
+  local translate = am.translate(0, 0) ^ am.rect(-50, -50, 50, 50, vec4(1, 0, 1, 1))
   local node = am.wrap(translate)
 
   function node:get_position2d()
