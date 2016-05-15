@@ -15,7 +15,7 @@ function Node:create(o)
   o = self:new(o)
 
   if not o.node then
-    o.node = self:_create_node()
+    o.node = o:_create_node()
   end
 
   o.node:action(function(node)
